@@ -78,7 +78,7 @@ ostream &operator<<(ostream &out, PhysicalState &p) {
     out << endl;
     out << "Time Passed : ";
     out << p.timePassed << endl;
-
+    return out;
 }
 
 
@@ -487,6 +487,7 @@ int convertToTexture(const char *filename) {
     dest.write((char *) &w, sizeof(w));
     dest.write((char *) &h, sizeof(h));
     dest.close();
+    return 0;
 }
 
 GLuint loadTextureFile(const char *filename) {
@@ -615,6 +616,7 @@ float writeMultiLineText(string text, int texture, alignment align) {
         writeText(SingleLine, texture, align);
         glTranslated(0, 0, -1);
     }
+    return 0.0f;
 }
 
 float writeText(string text, int texture, alignment align) {
